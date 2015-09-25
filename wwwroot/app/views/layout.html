@@ -1,0 +1,42 @@
+﻿
+<nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+                        data-target="#bs-example-navbar-collapse-1" 
+                        aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a [router-link]="['/Home']" class="navbar-brand">HOME</a>
+            </div>
+            <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a [router-link]="['/About']">About</a></li>
+                </ul>
+                <p class="navbar-text navbar-right">Version: 0.0.1</p>
+            </div>
+        </div>
+
+</nav>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron">
+                <h2>Angular 2 &amp; ASP.Net 5 Starter Template</h2>
+                <img src="images/angular-shield-large.png" alt="Angular 2"/>
+                <h5>You have successfully setup a new dev environment.</h5>
+            </div>
+        </div>
+    </div>
+</header>
+
+<router-outlet></router-outlet>
+
+<footer>
+    <p class="text-center">
+        made in dc.
+    </p>
+</footer>

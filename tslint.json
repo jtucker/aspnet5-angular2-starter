@@ -1,0 +1,10 @@
+{
+  "rules": {
+    "interface-name": true,
+    "class-name": true,
+    "indent": [ true, 10 ],
+    "curly": false,
+    "no-any": false,
+    "no-trailing-comma": false
+  }
+}

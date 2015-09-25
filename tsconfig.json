@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "noEmitOnError": true,
+        "noImplicitAny": false,
+        "removeComments": false,
+        "sourceMap": true,
+        "module": "system",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators":  true,
+        "target": "es5"
+    },
+  "exclude": [
+    "node_modules",
+    "wwwroot"
+  ]
+}

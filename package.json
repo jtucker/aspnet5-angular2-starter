@@ -1,0 +1,37 @@
+{
+  "name": "aspnet5-angular2-starter",
+  "version": "0.1.0",
+  "author": "Jason Tucker",
+  "description": "This is a starter template for getting going on ASP.Net 5 and Angular 2",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/jtucker/aspnet5-angular2-starter"
+  },
+  "readme": "README.md",
+  "license": "",
+  "scripts": {
+    "config": "npm install && jspm install && tsd link --config tsd.json && tsd reinstall --config tsd.json -r -o"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "wwwroot"
+    },
+    "dependencies": {
+      "angular2": "npm:angular2@^2.0.0-alpha.37",
+      "bootstrap": "github:twbs/bootstrap@^3.3.5",
+      "reflect-metadata": "npm:reflect-metadata@0.1.2",
+      "ts": "github:frankwallis/plugin-typescript@^2.0.17",
+      "zone.js": "npm:zone.js@^0.5.5"
+    },
+    "devDependencies": {
+      "typescript": "npm:typescript@^1.6.2"
+    }
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-preprocess": "^1.2.0",
+    "gulp-tslint": "^3.3.0-beta",
+    "gulp-tslint-stylish": "^1.0.4",
+    "jspm": "^0.16.9"
+  }
+}
