@@ -19,7 +19,7 @@ First things first, you will need the following items installed:
 	
 We then need to install some helper utilities. 
 ```
-npm install -g live-server tsd jspm gulp
+npm install -g tsd jspm gulp
 ```
 Once those are installed you can the execute the dependency installs. 
 ```
