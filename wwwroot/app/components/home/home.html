@@ -1,4 +1,7 @@
-﻿
-<template>
-    Welcome to home.
-</template>
+﻿<div class="container">
+    <h2>Welcome to the Home Screen</h2>
+    <p>Here we have an injected service that will grab a list of quotes from the database.</p>
+    <ul>
+        <li *ng-for="#quote of service.response.quotes">{{quote.quote}} ~ {{quote.author}}</li>
+    </ul>
+</div>

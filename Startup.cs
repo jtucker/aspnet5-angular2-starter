@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Builder;
+﻿using System.Net;
+using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
 using Microsoft.Framework.DependencyInjection;
@@ -38,10 +39,11 @@ namespace AspNet5Angular2Starter
             {
                 app.Run(async context =>
                 {
-                    context.Response.ContentType = "application/json";
-                    var quotes = "{" +
+                    var quotes = "{ \"quotes\":" +
                                  "  { \"quote\": \"Duct tape is like the force. It has a light side, a dark side, and it holds the universe together.\", \"author\":\"Oprah Winfrey\"}" +
                                  "}";
+                    context.Response.ContentLength = quotes.Length;
+                    context.Response.ContentType = "application/json";                    
                     await context.Response.WriteAsync(quotes);
                 });
             });

@@ -50,6 +50,7 @@ wwwroot/node_modules
 node_modules
 
 ### VisualStudioCode ###
+.vs
 .settings
 
 ### jspm ###
