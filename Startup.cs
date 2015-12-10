@@ -40,7 +40,7 @@ namespace AspNet5Angular2Starter
                 app.Run(async context =>
                 {
                     var quotes = "{ \"quotes\":" +
-                                 "  { \"quote\": \"Duct tape is like the force. It has a light side, a dark side, and it holds the universe together.\", \"author\":\"Oprah Winfrey\"}" +
+                                 " [ { \"quote\": \"Duct tape is like the force. It has a light side, a dark side, and it holds the universe together.\", \"author\":\"Oprah Winfrey\"} ]" +
                                  "}";
                     context.Response.ContentLength = quotes.Length;
                     context.Response.ContentType = "application/json";                    

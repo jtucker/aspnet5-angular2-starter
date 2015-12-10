@@ -5,7 +5,6 @@ import {Inject} from "angular2/angular2";
 import {ROUTER_DIRECTIVES, ROUTER_BINDINGS, RouteConfig, Router, Location} from "angular2/router";
 import {About} from "app/components/about/about";
 import {Home} from "app/components/home/home";
-import {QuotesService} from "services/QuotesService";
 
 @Component({
     selector: "app"
@@ -20,8 +19,8 @@ import {QuotesService} from "services/QuotesService";
 ])
 export class App {
 
-    constructor( @Inject(Router) private router: ngRouter.Router,
-                 @Inject(Location) private location: ngRouter.Location) {       
+    constructor( @Inject(Router) private router: Router,
+                 @Inject(Location) private location: Location) {       
 
         // Naviation rx subscription
         this.router.subscribe((nav) => {
