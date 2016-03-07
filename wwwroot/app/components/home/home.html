@@ -3,6 +3,6 @@
     <p>{{ message }}</p>
     <p>Here we have an injected service that will grab a list of quotes from the database.</p>
     <ul>
-        <li *ng-for="#quote of service.response.quotes">{{quote.quote}} ~ {{quote.author}}</li>
+        <li *ngFor="#quote of service.response.quotes">{{quote.quote}} ~ {{quote.author}}</li>
     </ul>
 </div>

@@ -1,15 +1,23 @@
-﻿using System.Net;
-using Microsoft.AspNet.Builder;
+﻿using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
-using Microsoft.Framework.DependencyInjection;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace AspNet5Angular2Starter
 {
     public class Startup
     {
+        IConfigurationRoot Configuration { get; set; }
+
         public Startup(IHostingEnvironment env)
         {
+            var builder = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .AddEnvironmentVariables();
+                
+            Configuration = builder.Build();
         }
 
         // This method gets called by a runtime.
@@ -17,22 +25,25 @@ namespace AspNet5Angular2Starter
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            // Uncomment the following line to add Web API services which makes it easier to port Web API 2 controllers.
-            // You will also need to add the Microsoft.AspNet.Mvc.WebApiCompatShim package to the 'dependencies' section of project.json.
-            // services.AddWebApiConventions();
         }
 
         // Configure is called after ConfigureServices is called.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            if(env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            
+            loggerFactory
+                .AddConsole(Configuration.GetSection("Logging"))
+                .AddDebug();
+            
             // Use the Default files ['index.html', 'index.htm', 'default.html', 'default.htm']
-            app.UseDefaultFiles();
-
-            // Configure the HTTP request pipeline.
-            app.UseStaticFiles();
-
-            // Add MVC to the request pipeline.
-            app.UseMvc();
+            app.UseDefaultFiles()
+                .UseStaticFiles()
+                .UseIISPlatformHandler()
+                .UseMvc();
 
             // Setup a generic Quotes API EndPoint
             app.Map("/api/quotes", (config) =>
@@ -48,5 +59,7 @@ namespace AspNet5Angular2Starter
                 });
             });
         }
-    }
+        
+        public static void Main(string[] args) => WebApplication.Run<Startup>(args);
+    }    
 }

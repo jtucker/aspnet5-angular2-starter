@@ -1,17 +1,16 @@
-﻿/// <reference path="../typings/tsd.d.ts" />
+﻿
 import 'reflect-metadata';
-import {Component, View} from "angular2/angular2";
-import {Inject} from "angular2/angular2";
-import {ROUTER_DIRECTIVES, ROUTER_BINDINGS, RouteConfig, Router, Location} from "angular2/router";
-import {About} from "app/components/about/about";
-import {Home} from "app/components/home/home";
+import {Component, View, Inject} from "angular2/core";
+import {ROUTER_DIRECTIVES, ROUTER_BINDINGS, ROUTER_PROVIDERS, RouteConfig, Router, Location} from "angular2/router";
+import {HTTP_PROVIDERS} from "angular2/http";
+import {About} from "./components/about/about";
+import {Home} from "./components/home/home";
 
 @Component({
-    selector: "app"
-})
-@View({
+    selector: "app",
     templateUrl: "app/views/layout.html",
-    directives: [ROUTER_DIRECTIVES]
+    directives: [ROUTER_DIRECTIVES],        
+    providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS]
 })
 @RouteConfig([
     { path: "/", as: "Home", component: Home },

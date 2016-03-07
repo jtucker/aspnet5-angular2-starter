@@ -1,7 +1,7 @@
-/// <reference path="../../typings/tsd.d.ts" />
+
 import 'reflect-metadata';
-import {Inject, Injectable} from "angular2/angular2";
-import {Http} from "angular2/http";
+import {Inject, Injectable} from "angular2/core";
+import {Http, HTTP_PROVIDERS} from "angular2/http";
 
 @Injectable()
 export class QuotesService {
@@ -10,6 +10,6 @@ export class QuotesService {
 	}
 	
 	getRandomQuote() {
-		return this.http.get("api/quotes").toRx();
+		return this.http.get("api/quotes");
 	}
  }

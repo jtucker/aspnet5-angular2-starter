@@ -1,6 +1,6 @@
-﻿/// <reference path="../../../typings/tsd.d.ts" />
+﻿
 import 'reflect-metadata';
-import {Component, View, Inject, NgFor} from "angular2/angular2";
+import {Component, View, Inject} from "angular2/core";
 import {QuotesService} from "../../services/QuotesService";
 import {IQuote} from "../../models/Quote";
 
@@ -8,8 +8,7 @@ import {IQuote} from "../../models/Quote";
 	selector: "home", bindings: [QuotesService]
 })
 @View({ 
-	templateUrl: "app/components/home/home.html",
-	directives: [NgFor] 
+	templateUrl: "app/components/home/home.html"
 })
 export class Home {
 	
@@ -21,11 +20,10 @@ export class Home {
 		this.message = "What is going on here?";
 		
 		service.getRandomQuote()
-			   .map((response:any) => response.json().quotes)
-			   .subscribe((quotes: IQuote[]) => {
-				   console.log(quotes);
-				   console.log(`Quotes found in the db: ${quotes.length}`);
-				   this.quotes = quotes;
+               
+			   .map(response => response.json())
+			   .subscribe(data => {
+				   console.log(data);				   
 			   })
 	}
 }

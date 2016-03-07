@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "noEmitOnError": true,
+        "moduleResolution": "node",
         "noImplicitAny": false,
         "removeComments": false,
         "sourceMap": true,

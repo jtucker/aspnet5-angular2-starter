@@ -7,10 +7,14 @@
         "module": "system",
         "emitDecoratorMetadata": true,
         "experimentalDecorators":  true,
-        "target": "es5"
+        "target": "es5",
+        "moduleResolution": "node"
     },
   "exclude": [
     "node_modules",
-    "wwwroot"
-  ]
+    "jspm_packages",
+    "typings/main.d.ts",
+    "typings/main"        
+  ],
+  "compileOnSave": false
 }
