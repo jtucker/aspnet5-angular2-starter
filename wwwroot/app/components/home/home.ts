@@ -2,6 +2,7 @@
 import 'reflect-metadata';
 import {Component, View, Inject} from "angular2/core";
 import {QuotesService} from "../../services/QuotesService";
+import "rxjs/add/operator/map";
 import {IQuote} from "../../models/Quote";
 
 @Component({ 

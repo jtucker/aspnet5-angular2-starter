@@ -24,6 +24,7 @@ System.config({
     "bootstrap": "github:twbs/bootstrap@3.3.6",
     "css": "github:systemjs/plugin-css@0.1.20",
     "reflect-metadata": "npm:reflect-metadata@0.1.3",
+    "rxjs": "npm:rxjs@5.0.0-beta.2",
     "ts": "github:frankwallis/plugin-typescript@4.0.2",
     "typescript": "npm:typescript@1.8.7",
     "github:frankwallis/plugin-typescript@4.0.2": {
