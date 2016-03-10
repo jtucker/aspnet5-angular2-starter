@@ -1,5 +1,4 @@
 ﻿
-import 'reflect-metadata';
 import {Component, View, Inject} from "angular2/core";
 import {ROUTER_DIRECTIVES, ROUTER_BINDINGS, ROUTER_PROVIDERS, RouteConfig, Router, Location} from "angular2/router";
 import {HTTP_PROVIDERS} from "angular2/http";

@@ -2,6 +2,10 @@ System.config({
   baseURL: "/",
   defaultJSExtensions: true,
   transpiler: "typescript",
+  typescriptOptions: {
+    "tsconfig": true,
+    "module": "system"
+  },
   paths: {
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
@@ -23,10 +27,12 @@ System.config({
     "angular2": "npm:angular2@2.0.0-beta.8",
     "bootstrap": "github:twbs/bootstrap@3.3.6",
     "css": "github:systemjs/plugin-css@0.1.20",
+    "es6-shim": "github:es-shims/es6-shim@0.35.0",
     "reflect-metadata": "npm:reflect-metadata@0.1.3",
     "rxjs": "npm:rxjs@5.0.0-beta.2",
     "ts": "github:frankwallis/plugin-typescript@4.0.2",
     "typescript": "npm:typescript@1.8.7",
+    "zone.js": "npm:zone.js@0.6.2",
     "github:frankwallis/plugin-typescript@4.0.2": {
       "typescript": "npm:typescript@1.8.7"
     },
@@ -320,6 +326,9 @@ System.config({
     },
     "npm:zone.js@0.5.15": {
       "es6-promise": "npm:es6-promise@3.1.2",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:zone.js@0.6.2": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     }
   }
